@@ -4,11 +4,15 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      #    volumes:
+    volumes:
+      - ./volumes/root:/root/host
     environment:
       - VNC_PASSWORD=CHANGEME!
     ports:
+      # You can use any port, but 443 is normally allowed through corp firewalls.
       - "443:22"
+        # mosh  
+      - "60001:60001/udp"
       # Free utility port for metasploit etc.
       - "666:666"
       # Uncomment to expose VNC (bad idea)
