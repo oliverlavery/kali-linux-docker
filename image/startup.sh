@@ -9,8 +9,8 @@ cp /usr/share/doro-lxde-wallpapers/desktop-items-0.conf /root/.config/pcmanfm/LX
 # If a Oracle Java version is available, install it
 if [ -f /root/host/jre-8u221-linux-x64.tar.gz ]; then
     tar xzf /root/host/jre-8u221-linux-x64.tar.gz -C /opt/
-    update-alternatives --install /usr/bin/java java /opt/jdk1.8.0_221/bin/java
-    update-alternatives --set java /opt/jdk1.8.0_221/bin/java
+    update-alternatives --install /usr/bin/java java /opt/jre1.8.0_221/bin/java 1
+    update-alternatives --set java /opt/jre1.8.0_221/bin/java
 fi
 
 if [ -n "$VNC_PASSWORD" ]; then
