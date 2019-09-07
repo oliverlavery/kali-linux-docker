@@ -35,6 +35,7 @@ RUN pip install setuptools wheel && pip install -r /usr/lib/web/requirements.txt
 RUN useradd -ms /usr/sbin/nologin ccc
 COPY authorized_keys_root /root/.ssh/authorized_keys
 COPY authorized_keys_ccc /home/ccc/.ssh/authorized_keys
+RUN chown ccc.ccc /home/ccc/.ssh/authorized_keys
 
 EXPOSE 22
 

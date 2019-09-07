@@ -39,6 +39,17 @@ Alternately over mobile internet, use MOSH
 mosh "root@host 443"
 ```
 
+Oracle Java
+------------------
+
+A number of GUI tools like burp and dirbuster do not work properly with OpenJDK in kali. Oracle in their infinite wisdom require that you register to download Oracle Java. To workaround this, when the container is started it will look for and install Oracle Java from:
+
+```
+volumes/root/jre-8u221-linux-x64.tar.gz
+```
+
+Download Oracle's JRE and place it in this location.
+
 Connecting with VNC
 ------------------
 
