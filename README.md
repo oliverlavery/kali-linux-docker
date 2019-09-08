@@ -48,8 +48,6 @@ A number of GUI tools like burp and dirbuster do not work properly with OpenJDK 
 volumes/root/jre-8u221-linux-x64.tar.gz
 ```
 
-Download Oracle's JRE and place it in this location.
-
 Connecting with VNC
 ------------------
 

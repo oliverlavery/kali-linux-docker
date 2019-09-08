@@ -1,6 +1,7 @@
 version: '3'
 services:
   ssh:
+    hostname: kali-docker
     build:
       context: .
       dockerfile: Dockerfile
