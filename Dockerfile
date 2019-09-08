@@ -36,6 +36,7 @@ RUN useradd -ms /usr/sbin/nologin ccc
 COPY authorized_keys_root /root/.ssh/authorized_keys
 COPY authorized_keys_ccc /home/ccc/.ssh/authorized_keys
 RUN chown ccc.ccc /home/ccc/.ssh/authorized_keys
+RUN /usr/share/kali-menu/update-kali-menu
 
 EXPOSE 22
 
