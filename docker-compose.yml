@@ -12,7 +12,9 @@ services:
     ports:
       # You can use any port, but 443 is normally allowed through corp firewalls.
       - "443:22"
-        # mosh  
+      # CCC
+      - "6666-6676:6666-6676"
+      # mosh  
       - "60001-60011:60001-60011/udp"
       # Free utility port for metasploit etc.
       - "666-676:666-676"
