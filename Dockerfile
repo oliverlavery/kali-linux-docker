@@ -1,4 +1,4 @@
-FROM kalilinux/kali-linux-docker
+FROM kalilinux/kali-rolling
 
 RUN echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" > /etc/apt/sources.list && \
 echo "deb-src http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/apt/sources.list
@@ -14,16 +14,18 @@ RUN apt-get install -y --no-install-recommends --allow-unauthenticated \
         lxde x11vnc xvfb autocutsel \
 	    xfonts-base lwm xterm \
         nginx \
-        python-pip python-dev build-essential \
+        python-dev build-essential \
         mesa-utils libgl1-mesa-dri \
         dbus-x11 x11-utils \
     && apt-get -y autoclean \
     && apt-get -y autoremove \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
+    && sudo python get-pip.py
 
 # For installing Kali metapackages uncomment needed lines
 RUN apt-get update && apt-cache search kali-linux && apt-get install -y   \
-        kali-linux-light kali-linux-top10 kali-menu ncat stunnel mosh locales-all \
+        kali-linux-core kali-menu ncat stunnel mosh locales-all \
         adapta-gtk-theme
 
 ENV TINI_VERSION v0.15.0
