@@ -8,7 +8,7 @@ services:
     volumes:
       - ./volumes/root:/root/host
     environment:
-      - VNC_PASSWORD=CHANGEME!
+      - VNC_PASSWORD=Foobar@123
     ports:
       # You can use any port, but 443 is normally allowed through corp firewalls.
       - "443:22"

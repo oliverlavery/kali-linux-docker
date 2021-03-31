@@ -20,13 +20,12 @@ RUN apt-get install -y --no-install-recommends --allow-unauthenticated \
     && apt-get -y autoclean \
     && apt-get -y autoremove \
     && rm -rf /var/lib/apt/lists/* \
-    && curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
+    && curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py \
     && sudo python get-pip.py
 
 # For installing Kali metapackages uncomment needed lines
 RUN apt-get update && apt-cache search kali-linux && apt-get install -y   \
-        kali-linux-core kali-menu ncat stunnel mosh locales-all \
-        adapta-gtk-theme
+        kali-linux-core kali-menu ncat stunnel mosh locales-all
 
 ENV TINI_VERSION v0.15.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /bin/tini
